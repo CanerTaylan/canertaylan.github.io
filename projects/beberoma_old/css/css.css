@@ -1,0 +1,286 @@
+@charset "utf-8";
+/** top frame **/
+body {
+	margin:0;
+}
+.top {
+	position: relative;
+	width: 100%;
+	height: 100%; 
+	margin:0 auto;
+	background-image:url(../pics/fon2.png);
+	background-repeat:repeat-y;
+		}
+.banner {
+	position:relative;
+	height: 120px;
+	width: 1000px;
+	margin: 0 auto;
+	margin-top: -5px;
+	background: url(../pics/banner.png);
+	background-repeat: no-repeat;
+		}
+.figur {
+	position: absolute;
+	margin-top: 10px;
+	background-image: url(../pics/figur3.png);
+	background-repeat: no-repeat;
+	z-index: 0;
+	width: 327px;
+	height: 155px;
+	left: 433px;
+	top: -8px;
+	}
+.marka{
+	background-repeat:no-repeat;
+	background-position:center;
+}
+/** bottom frame **/
+.alt {
+	color: #000;
+	font-family: Verdana;
+	font-size: 10px;
+	font-weight: bold;
+	text-decoration:none;
+	text-align:center;
+}
+.copy {
+	font-size: 10px;
+	color: #000000;
+	text-align:center;
+}
+/** main css **/
+@font-face {
+ font-family: Snap;
+ src: url("snap.eot") /* EOT file for IE */
+}
+@font-face {
+ font-family: Snap;
+ src: url("snap.TTF") /* TTF file for CSS3 browsers */
+}
+
+.logo {
+	font-family: SNAP;
+	font-size: 14px;
+	color: #8C1E72;
+}
+body a:link {
+	text-decoration: none;
+}
+body a:visited {
+	text-decoration: none;
+}
+body a:hover {
+	text-decoration: none;
+}
+body a:active {
+	text-decoration: none;
+}
+a img {
+	border: 0px;
+}
+.main{
+	font-family: Verdana;
+	font-size: 12px;
+	text-align: justify;
+	padding-left:8px;
+	padding-right:8px;
+}
+.maintable{
+	background-image:url(pics/back.gif);
+	background-color:#FFFFFF;
+	background-position:center;
+	background-repeat: no-repeat;
+}
+h4{
+	color:#666;
+	font-family:Verdana;
+	font-size:14px;
+}
+h4 b{
+	color:#CC0066;
+}
+h4 p{
+	text-indent:30px;
+}
+
+
+/** alt sayfalar */
+.simge{
+	list-style-image:url(../pics/simge.gif);
+	border-left-width:thin;
+	border-left-color:#FF0000;
+}
+.simge li{
+	font-family:tahoma;
+	font-size:12px;
+	font-weight:bolder;
+}
+h1{
+	font-family:Book Antiqua;
+	font-size:18px;
+	font-style:italic;
+	font-weight:990;
+	color: #c06;
+	text-shadow:5px 5px 5px #666666;
+	text-align:center;	
+	}
+.kayanyazi{
+	background-color:#CCC;
+	border-bottom-style:dotted;
+	border-bottom-color:#666666;
+	border-top-style:dotted;
+	border-top-color:#666666;
+	font-family:Verdana;
+	font-size:22px;
+	color:#FF0000;
+}
+.duyuru{
+	width:165px;
+	height:205px;
+	margin-left:166px;
+	margin-top:20px;	
+	border-left-style:dotted;
+	border-left-color:#666666;
+	border-right-style:dotted;
+	border-right-color:#666666;
+	font-family:Verdana;
+	font-size:11px;
+	color:#000000;
+	list-style-type:none;
+	text-align: center;
+}
+.face {
+	position: fixed;
+	_position: absolute;
+	top: 200px;
+	_top: expression(eval(document.body.scrollTop ) ); 
+	right: 0;
+	margin: 0;
+} 
+#face a:link {
+	text-decoration: none;
+}
+#face a:visited {
+	text-decoration: none;
+}
+#face a:hover {
+	text-decoration: none;
+}
+#face a:active {
+	text-decoration: none;
+}
+
+
+.style2 {/** ulaşım bilgileri *//
+	font-family: Gregoria;
+	font-size: 12px;
+	font-weight: bold;
+}
+.urun {
+	font-family:Verdana;
+	font-size:10px;
+	background-color:#FFFFFF;
+	width:100%;
+}
+.urun td{
+	width: 300px;
+	valign: top;
+	border-right: solid;
+	border-right-color: #CC0066;
+}
+.detay{
+	text-align:left;
+	vertical-align:text-top;
+	margin-left:5px;
+
+}
+.detay td{
+	border-bottom: solid;
+	border-bottom-color: #00CCFF;
+}
+.detay h3{
+	font-family:Verdana;
+	font-size:11px;
+	font-weight:bold;
+	color:#FF0066;
+	text-align:center;
+}
+.textil{
+	text-align:left;
+	background-color:#FFFFFF;
+	width:100%;
+	font-family:Verdana;
+	font-size:12px;
+}
+.textil td{
+	width: 300px;
+	valign: top;
+	border-right: solid;
+	border-right-color: #CC0066;
+	border-bottom: solid;
+	border-bottom-color: #00CCFF;
+}
+
+/** sss **/
+.sss ul{
+	margin:0px;
+	padding:0px;
+	list-style:none;
+}
+.sss li {
+    margin:0;
+	height:100%;
+	width:1070px;
+    background-image:none;
+    border-bottom:3px solid  #d1cdb2;
+    overflow: hidden;
+	background-color:#999999;
+	padding-left:15px;
+	padding-right:15px;
+}
+.sss li:hover{
+	background-color: #CC0066;
+	}
+.sss h3 {
+	text-align:left;
+    font:12px Book Antiqua;
+	text-transform:uppercase;
+    font-weight:bold;
+    color: #FFFFFF;
+    cursor: pointer;
+}
+.sss h3:hover {
+    text-decoration:underline;
+	color:#000000;
+	font-size:12px;
+	text-transform: capitalize;
+}
+.sss li div {
+	text-align:justify;
+	padding: 5px 15px;
+    display: block;
+	height:100%;
+	background-color:#CCCCCC;
+	font-family:Verdana;
+	font-size:11px;
+	font-weight: normal;
+}
+
+.sss table{
+	border: 1px;
+	border-color: #FFFFFF;
+	border-style: dotted;
+}
+.sss table td{
+	border:1px;
+	padding-left:5px;
+	border-color:#FFFFFF;
+	border-style:dotted;
+}
+.sss table th{
+	border:1px;
+	padding-left:5px;
+	border-color:#FFFFFF;
+	border-style:dotted;
+}

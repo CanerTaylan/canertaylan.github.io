@@ -1,0 +1,55 @@
+/* CSS Document */
+
+a{
+cursor: pointer;
+text-decoration:none;
+}
+
+#backgroundPopup{
+display:none;
+position:fixed;
+_position:absolute; /* hack for internet explorer 6*/
+height:100%;
+width:100%;
+top:0;
+left:0;
+background:#000000;
+border:1px solid #cecece;
+z-index:1;
+}
+#popup{
+height:400px;
+width:650px;
+background:#FFFFFF;
+border:2px solid #cecece;
+z-index:2;
+padding:12px;
+}
+#popup td{
+background-repeat:no-repeat;
+background-position:center;
+}
+#popuptext{
+text-align:left;
+color: #990000;
+font-size:16px;
+font-weight:bold;
+border-bottom:1px dotted #666666;
+font-family:Tahoma, Geneva, sans-serif;
+}
+#popupClose{
+font-family:Tahoma, Geneva, sans-serif;
+font-size:18px;
+right:0px;
+top:0px;
+position:absolute;
+color: #666666;
+font-weight: bold;
+border-left:1px solid #666666;
+border-bottom:1px solid #666666;
+padding:3px;
+}
+#popupClose a:hover{
+	background-color:#FF0000;
+}
+

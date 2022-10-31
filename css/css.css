@@ -10,6 +10,11 @@ a:focus {
     outline: none;
     text-decoration: none;
 }
+.sign {
+    font-family: 'Inspiration', cursive;
+    font-size: medium;
+  }
+
 
 #navbarlogo{
     

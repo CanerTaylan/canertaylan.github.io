@@ -1,105 +1,116 @@
-body{
-background-color: #e0f4f5;
-}
 
-hr{
-    border-style: dotted; 
-    border-width: 3px; 
-    width: 50%; 
-    text-align: center;
-}
-
-h2, h4, h5 {
-    color: #033540 ;
-}
-.navbar{
-    background-color: #033540; 
-    color: #fff;
-}
-.navbar li a{
-color: #fff;
-text-decoration: none;   
-}
-
-
-
-.carousel-inner > .item > img {
-    margin: 0 auto;
-}
-
-.my-slide{
-    z-index: 1;
-}
-#order{
-    background-color: #fff;
-}
-
-.carousel-control-prev-icon, .carousel-control-next-icon  {
-    background-color: #033540;
-    border-radius: 10px;
-    -webkit-border-radius: 10px;
-    -moz-border-radius: 10px;
-    -ms-border-radius: 10px;
-    -o-border-radius: 10px;
-    height: 3rem;
-}
-.carousel-control-prev-icon:hover, .carousel-control-next-icon:hover {
-        color: #fff;
-}
-#main{
-    background-color: #a7d1d2;
-margin: auto;   
-}
-
-
-#main ul {
-    list-style: none;
-    line-height:120%;
-}
-  
-#main ul li::before {
-    content: "\2023";
-    color: #033540;
-    font-size: 20px;
-    font-weight: bold;
-    display: inline-block;
-    width: 1em;
-    margin-left: -1em;
-}
-#footer-card {
-    background-color: #a7d1d2;
-}
-#footer-card .btn{
-    background-color: #033540;
-    border-color: #0dcaf0;
-}
-#footer-card .btn:hover{
-    background-color: #0dcaf0;
-    border-color: #033540;
-    color: #033540;
-}
-#footer-card a{
+a {
     text-decoration: none;
-    color: #033540;
-    font-size: large;
-    font-weight: bold;
 }
-#footer-card a:hover, i:hover{
-     color: rgba(255, 255, 255, 0.449);
+
+a:hover,
+a:active,
+a:focus {
+    color: #EF233C;
+    outline: none;
+    text-decoration: none;
 }
 .sign {
     font-family: 'Inspiration', cursive;
     font-size: medium;
   }
+.sign:hover{
+color: white
+}
 
-#contact i{
-color: #033540;
-font-size: 20px;
+
+#navbarlogo{
+    
+    background:url(../img/logo.png);
+    width: 130px;
+    height: 130px;
+    background-repeat:no-repeat;
+        border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+    border: 5px solid #000;
+    /* float: left;
+    margin-top: 7px;
+    margin-bottom: 7px;
+    margin-left: 25px; */
+}
+.navbar .navbar-brand {
+    margin-right: -100px;
+    font-size: 30px;
+    line-height: 0px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    transition: .5s;
+    
+}
+
+.navbar-dark .navbar-nav .nav-link,
+.navbar-dark .navbar-nav .nav-link:focus {
+    padding: 10px 10px 8px 10px;
+    color: #e06507;
+    font-size: 20px;
+    font-weight: 500;
+    background-color: #f6f6f6;
+    margin: 1px;
+    border-radius: 6px;
+    -webkit-border-radius: 6px;
+    -moz-border-radius: 6px;
+    -ms-border-radius: 6px;
+    -o-border-radius: 6px;
+}
+
+.navbar-dark.nav-sticky .navbar-nav .nav-link,
+.navbar-dark.nav-sticky .navbar-nav .nav-link:focus {
+    color: #f7f7f7;
+}
+
+.navbar-dark .navbar-nav .nav-link:hover,
+.navbar-dark .navbar-nav .nav-link.active {
+    color: #000;
+    background-color: #e06507;
+}
+
+.navbar-dark.nav-sticky .navbar-nav .nav-link:hover,
+.navbar-dark.nav-sticky .navbar-nav .nav-link.active {
+    color: #EF233C;
+}
+.carousel-item h5{
+    color: #e06507;
+    font-weight: 900;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+#carou_icon {
+    color: #e06507;
+    font-size: 150px;
+}
+.carousel-control-prev .material-icons, .carousel-control-next .material-icons {
+    font-size: 3.125rem;
+    background-color: #77727291;
+    border-radius: 50px;
+    color: #e06507;
+}
+.carousel-control-prev .material-icons:hover, .carousel-control-next .material-icons:hover {
+        color: #fff;
+}
+.card-body{
+    background-color: #fff0f0e8;
 
 }
-#contactform{
-    background-color: #03354045 ; 
-    border-color: blueviolet;
-    padding: 5px;
-    padding-left:10px ;
+.card .btn{
+    background-color: #e06507;
+    font-weight: 400;
+}
+.card .btn:hover{
+    background-color: #000;
+    color: #e06507;
+    font-weight: 400;
+}
+footer{
+    background-color: #262527;
+}
+#social-icon i:hover{
+    opacity: 0.6;
 }

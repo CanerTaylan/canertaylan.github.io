@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hacim Hesaplama</title>
-    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
 </head>
 
 <body>
@@ -110,20 +110,23 @@
                         </div>
                         <li>Şekil ölçülerini girin</li>
                         <div>
-                            <label class="visually-hidden"><span id="en" style="color: red ;"></span></label>
+                            <label class="visually-hidden"></label>
                             <div class="input-group pb-2" style="max-width:300px ;">
-                                <div class="input-group-text" style="min-width: 155px ;">Kenar uzunluğu</div>
-                                <input type="text" class="form-control" id="kenara">
+                                <div class="input-group-text" style="min-width: 160px ;">Kenar uzunluğu</div>
+                                <input type="text" class="form-control" id="kenara"><span id="en"
+                                    class="text-muted ms-3"></span>
                             </div>
-                            <label class="visually-hidden"><span id="boy" style="color: red ;"></span></label>
+                            <label class="visually-hidden"></label>
                             <div class="input-group pb-2" style="max-width:300px ;">
-                                <div class="input-group-text" style="min-width: 155px ;">2. kenar uzunluğu</div>
-                                <input type="text" class="form-control" id="kenarb">
+                                <div class="input-group-text" style="min-width: 160px ;">2. kenar uzunluğu</div>
+                                <input type="text" class="form-control" id="kenarb"><span id="boy"
+                                    class="text-muted ms-3"></span>
                             </div>
-                            <label class="visually-hidden"><span id="yukseklik" style="color: red ;"></span></label>
+                            <label class="visually-hidden"></label>
                             <div class="input-group pb-2" style="max-width:300px ;">
-                                <div class="input-group-text" style="min-width: 155px ;">Yükseklik</div>
-                                <input type="text" class="form-control" id="kenarc">
+                                <div class="input-group-text" style="min-width: 160px ;">Yükseklik</div>
+                                <input type="text" class="form-control" id="kenarc"><span id="yukseklik"
+                                    class="text-muted ms-3"></span>
                             </div>
                             <div style="text-align: center">
                                 <button type="button" class="btn text-center" onclick="hacim()">Hesapla</button>
@@ -141,8 +144,6 @@
 
     <script>
         function birimsec() {
-
-
             var uzunluk = document.getElementById("birim").value;
             var olcubirim = "cm";
             if (uzunluk == mm)
@@ -176,7 +177,7 @@
 
 
 
-    <script src="../js/bootstrap.bundle.min.js"></script>
+    <script src="js/bootstrap.bundle.min.js"></script>
 </body>
 
 </html>

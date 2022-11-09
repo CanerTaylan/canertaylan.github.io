@@ -113,19 +113,19 @@
                             <label class="visually-hidden"></label>
                             <div class="input-group pb-2" style="max-width:300px ;">
                                 <div class="input-group-text" style="min-width: 160px ;">Kenar uzunluğu</div>
-                                <input type="text" class="form-control" id="kenara"><span id="en"
+                                <input type="text" class="form-control" id="kenara"><span id="en_hac"
                                     class="text-muted ms-3"></span>
                             </div>
                             <label class="visually-hidden"></label>
                             <div class="input-group pb-2" style="max-width:300px ;">
                                 <div class="input-group-text" style="min-width: 160px ;">2. kenar uzunluğu</div>
-                                <input type="text" class="form-control" id="kenarb"><span id="boy"
+                                <input type="text" class="form-control" id="kenarb"><span id="boy_hac"
                                     class="text-muted ms-3"></span>
                             </div>
                             <label class="visually-hidden"></label>
                             <div class="input-group pb-2" style="max-width:300px ;">
                                 <div class="input-group-text" style="min-width: 160px ;">Yükseklik</div>
-                                <input type="text" class="form-control" id="kenarc"><span id="yukseklik"
+                                <input type="text" class="form-control" id="kenarc"><span id="yukseklik_hac"
                                     class="text-muted ms-3"></span>
                             </div>
                             <div style="text-align: center">
@@ -134,7 +134,7 @@
                         </div>
                     </ol>
                     <br>
-                    <div id="son" class="mx-auto" style="text-align: center; max-width: 200px;">
+                    <div id="son_hac" class="mx-auto" style="text-align: center; max-width: 200px;">
                     </div>
                 </fieldset>
             </form>
@@ -152,9 +152,9 @@
                 olcubirim = "m";
             else if (uzunluk == km)
                 olcubirim = "km";
-            document.getElementById("en").innerHTML = uzunluk;
-            document.getElementById("boy").innerHTML = uzunluk;
-            document.getElementById("yukseklik").innerHTML = uzunluk;
+            document.getElementById("en_hac").innerHTML = uzunluk;
+            document.getElementById("boy_hac").innerHTML = uzunluk;
+            document.getElementById("yukseklik_hac").innerHTML = uzunluk;
         }
         birimsec();
 
@@ -168,7 +168,7 @@
             boy = Number(document.getElementById("kenarb").value)
             yukseklik = Number(document.getElementById("kenarc").value)
             sonuc = (en * boy * yukseklik)
-            document.getElementById("son").innerHTML = en + "cm x " + boy + "cm x " + yukseklik + "cm ölçülerindeki kolinizin desi ölçüsü " + '<span id="result">' + sonuc + '</span>' + " desidir"
+            document.getElementById("son_hac").innerHTML = en + "cm x " + boy + "cm x " + yukseklik + "cm ölçülerindeki kolinizin desi ölçüsü " + '<span id="result">' + sonuc + '</span>' + " desidir"
 
         }
     </script>

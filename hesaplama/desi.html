@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Desi Hesaplama</title>
-    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
 </head>
 
 <body>
@@ -133,30 +133,38 @@
                             </select>
                         </div>
                         <li>Şekil ölçülerini girin</li>
-                        <div class="bg-dark">
-                            <label class="visually-hidden"><span id="en" style="color: red ;"></span></label>
-                            <div class="input-group" style="max-width:300px ;">
-                                <div class="input-group-text">Kenar uzunluğu</div>
-                                <input type="text" class="form-control" id="kenara">
-
-                                <label class="visually-hidden"><span id="boy" style="color: red ;"></span></label>
-                                <div class="input-group" style="max-width:300px ;">
-                                    <div class="input-group-text">2. kenar uzunluğu</div>
-                                    <input type="text" class="form-control" id="kenara">
-
-                                    <label class="visually-hidden"><span id="yukseklik" style="color: red ;"></span></label>
-                                    <div class="input-group" style="max-width:300px ;">
-                                        <div class="input-group-text">Kenar uzunluğu</div>
-                                        <input type="text" class="form-control" id="kenara">
-                                    </div>
-
-                                </div>
-
+                        <div>
+                            <label class="visually-hidden"></label>
+                            <div class="input-group pb-2" style="max-width:300px ;">
+                                <div class="input-group-text" style="min-width: 160px ;">Kenar uzunluğu</div>
+                                <input type="text" class="form-control" id="kenara"><span id="en_hac"
+                                    class="text-muted ms-3"></span>
+                            </div>
+                            <label class="visually-hidden"></label>
+                            <div class="input-group pb-2" style="max-width:300px ;">
+                                <div class="input-group-text" style="min-width: 160px ;">2. kenar uzunluğu</div>
+                                <input type="text" class="form-control" id="kenarb"><span id="boy_hac"
+                                    class="text-muted ms-3"></span>
+                            </div>
+                            <label class="visually-hidden"></label>
+                            <div class="input-group pb-2" style="max-width:300px ;">
+                                <div class="input-group-text" style="min-width: 160px ;">Yükseklik</div>
+                                <input type="text" class="form-control" id="kenarc"><span id="yukseklik_hac"
+                                    class="text-muted ms-3"></span>
+                            </div>
+                            <div style="text-align: center">
+                                <button type="button" class="btn text-center" onclick="hacim()">Hesapla</button>
+                            </div>
+                        </div>
                     </ol>
+                    <br>
+                    <div id="son_hac" class="mx-auto" style="text-align: center; max-width: 200px;">
+                    </div>
                 </fieldset>
             </form>
         </div>
     </div>
+
     <script>
         var en = 0
         var boy = 0
@@ -174,8 +182,6 @@
 
     <script>
         function birimsec() {
-
-
             var uzunluk = document.getElementById("birim").value;
             var olcubirim = "cm";
             if (uzunluk == mm)
@@ -184,18 +190,32 @@
                 olcubirim = "m";
             else if (uzunluk == km)
                 olcubirim = "km";
-            document.getElementById("en").innerHTML = uzunluk;
-            document.getElementById("boy").innerHTML = uzunluk;
-            document.getElementById("yukseklik").innerHTML = uzunluk;
+            document.getElementById("en_hac").innerHTML = uzunluk;
+            document.getElementById("boy_hac").innerHTML = uzunluk;
+            document.getElementById("yukseklik_hac").innerHTML = uzunluk;
         }
         birimsec();
+
+
+        var en = 0
+        var boy = 0
+        var yukseklik = 0
+        var sonuc = 0
+        function hacim() {
+            en = Number(document.getElementById("kenara").value)
+            boy = Number(document.getElementById("kenarb").value)
+            yukseklik = Number(document.getElementById("kenarc").value)
+            sonuc = (en * boy * yukseklik)
+            document.getElementById("son_hac").innerHTML = en + "cm x " + boy + "cm x " + yukseklik + "cm ölçülerindeki kolinizin desi ölçüsü " + '<span id="result">' + sonuc + '</span>' + " desidir"
+
+        }
     </script>
 
 
 
 
 
-    <script src="../js/bootstrap.bundle.min.js"></script>
+    <script src="js/bootstrap.bundle.min.js"></script>
 </body>
 
 </html>

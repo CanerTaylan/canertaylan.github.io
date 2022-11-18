@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hacim Hesaplama</title>
-    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
 </head>
 
 <body>
@@ -57,6 +57,10 @@
         .form-check-label {
             text-align: center;
         }
+
+        #caltable li {
+            color: red;
+        }
     </style>
 
     <div class="container mt-3">
@@ -65,76 +69,80 @@
                 <fieldset id="caltable" class="form-group p-3">
                     <legend class="m-auto">Hacim Hesaplama Aracı</legend>
                     <ol>
-                        <li>Hacmini ölçmek istediğiniz şekli seçin </li>
+                        <li class="fw-bold text-danger my-2">Hacmini ölçmek istediğiniz şekli seçin </li>
                         <div class="bg-light p-2">
                             <label class="form-check-label" for="kup">
                                 <input class="form-check-input" type="radio" id="kup" name="flexRadioDefault" checked
-                                    value="kup">
-                                <img src="https://www.hesaplama.net/images/kup.svg" style="width:75px;"><br>Küp </label>
+                                    value="kup" onchange="sekilsec()">
+                                <img src=" https://www.hesaplama.net/images/kup.svg" style="width:75px;"><br>Küp
+                            </label>
                             <label class="form-check-label" for="dprizma">
                                 <input class="form-check-input" type="radio" id="dprizma" name="flexRadioDefault"
-                                    value="dprizma">
+                                    value="dprizma" onchange="sekilsec()">
                                 <img src="https://www.hesaplama.net/images/dikdortgenler-prizmasi.svg"
                                     style="width:100px;"><br>Dikdörtgenler<br>Prizması </label>
                             <label class="form-check-label" for="kure">
                                 <input class="form-check-input" type="radio" id="kure" name="flexRadioDefault"
-                                    value="kure">
+                                    value="kure" onchange="sekilsec()">
                                 <img src="https://www.hesaplama.net/images/kure.svg" style="width:75px;"><br>Küre
                             </label>
                             <label class="form-check-label" for="silindir">
                                 <input class="form-check-input" type="radio" id="silindir" name="flexRadioDefault"
-                                    value="silindir">
+                                    value="silindir" onchange="sekilsec()">
                                 <img src="https://www.hesaplama.net/images/silindir.svg"
                                     style="width:75px;"><br>Silindir
                             </label>
                             <label class="form-check-label me-2" for="koni">
                                 <input class="form-check-input" type="radio" id="koni" name="flexRadioDefault"
-                                    value="koni">
+                                    value="koni" onchange="sekilsec()">
                                 <img src="https://www.hesaplama.net/images/koni.svg" style="width:75px;"><br>Koni
                             </label>
                             <label class="form-check-label" for="piramit">
                                 <input class="form-check-input" type="radio" id="piramit" name="flexRadioDefault"
-                                    value="piramit">
+                                    value="piramit" onchange="sekilsec()">
                                 <img src="https://www.hesaplama.net/images/kare-piramit.svg" style="width:75px;"><br>
                                 Kare Piramit </label>
                         </div>
-                        <li>Ölçü birimini seçin</li>
+                        <li class="fw-bold text-danger my-2">Ölçü birimini seçin</li>
                         <div>
-                            <label class="visually-hidden" for="birim">Ölçü Birimi</label>
                             <select class="form-select" id="birim" style="max-width:200px ;" onchange="birimsec()">
-                                <option value="cm" id="cm" selected>cm (santimetre)</option>
+                                <option label="Ölçü birimi"></option>
+                                <option value="cm" id="cm">cm (santimetre)</option>
                                 <option value="mm" id="mm">mm (milimetre)</option>
                                 <option value="m" id="m">m (metre)</option>
                                 <option value="km" id="km">km (kilometre)</option>
                             </select>
                         </div>
-                        <li>Şekil ölçülerini girin</li>
+                        <li class="fw-bold text-danger my-2">Şekil ölçülerini girin</li>
                         <div>
-                            <label class="visually-hidden"></label>
-                            <div class="input-group pb-2" style="max-width:300px ;">
-                                <div class="input-group-text" style="min-width: 160px ;">Kenar uzunluğu</div>
-                                <input type="text" class="form-control" id="kenara"><span id="en_hac"
-                                    class="text-muted ms-3"></span>
+                            <div class="input-group pb-2" style="max-width:300px; display: none;" id="satir4">
+                                <div class="input-group-text" style="min-width: 160px ;" id="yaricap"></div>
+                                <input type="text" class="form-control" style="max-width: 150px">
+                                <span id="yaricap_birim" class="text-muted ms-3 my-auto"></span>
                             </div>
-                            <label class="visually-hidden"></label>
-                            <div class="input-group pb-2" style="max-width:300px ;">
-                                <div class="input-group-text" style="min-width: 160px ;">2. kenar uzunluğu</div>
-                                <input type="text" class="form-control" id="kenarb"><span id="boy_hac"
-                                    class="text-muted ms-3"></span>
+                            <div class="input-group pb-2" style="max-width:300px; display: none;" id="satir1">
+                                <div class="input-group-text" style="min-width: 160px ;" id="kenara"></div>
+                                <input type="text" class="form-control" style="max-width: 150px">
+                                <span id="en_birim" class="text-muted ms-3 my-auto"></span>
                             </div>
-                            <label class="visually-hidden"></label>
-                            <div class="input-group pb-2" style="max-width:300px ;">
-                                <div class="input-group-text" style="min-width: 160px ;">Yükseklik</div>
-                                <input type="text" class="form-control" id="kenarc"><span id="yukseklik_hac"
-                                    class="text-muted ms-3"></span>
+                            <div class="input-group pb-2" style="max-width:300px; display: none;" id="satir2">
+                                <div class="input-group-text" style="min-width: 160px ;" id="kenarb"></div>
+                                <input type="text" class="form-control" style="max-width: 150px">
+                                <span id="boy_birim" class="text-muted  ms-3 my-auto"></span>
                             </div>
-                            <div style="text-align: center">
-                                <button type="button" class="btn text-center" onclick="hacim()">Hesapla</button>
+                            <div class="input-group pb-2" style="max-width:300px; display: none;" id="satir3">
+                                <div class="input-group-text" style="min-width: 160px ;" id="kenarc"></div>
+                                <input type="text" class="form-control" style="max-width: 150px">
+                                <span id="yukseklik_birim" class="text-muted ms-3 my-auto"></span>
+                            </div>
+
+                            <div style="text-align: center" class="mt-3">
+                                <button type="button" class="btn text-center" onclick="hesapla()">Hesapla</button>
                             </div>
                         </div>
                     </ol>
                     <br>
-                    <div id="son_hac" class="mx-auto" style="text-align: center; max-width: 200px;">
+                    <div id="sonuc" class="mx-auto" style="text-align: center; max-width: 200px;">
                     </div>
                 </fieldset>
             </form>
@@ -143,41 +151,121 @@
 
 
     <script>
+        function sekilsec() {
+            var kup = document.getElementById("kup").checked;
+            var dprizma = document.getElementById("dprizma").checked;
+            var kure = document.getElementById("kure").checked;
+            var silindir = document.getElementById("silindir").checked;
+            var koni = document.getElementById("koni").checked;
+            var piramit = document.getElementById("piramit").checked;
+
+            if (kup) {
+                document.getElementById("satir1").style.cssText = "display:list-item;display:flex";
+                document.getElementById("satir2").style.display = "none";
+                document.getElementById("satir3").style.display = "none";
+                document.getElementById("satir4").style.display = "none";
+                document.getElementById("kenara").innerHTML = "Kenar Uzunluğu (a)";
+            } else if (dprizma) {
+                document.getElementById("satir1").style.cssText = "display:list-item;display:flex";
+                document.getElementById("satir2").style.cssText = "display:list-item;display:flex";
+                document.getElementById("satir3").style.cssText = "display:list-item;display:flex";
+                document.getElementById("satir4").style.display = "none";
+                document.getElementById("kenara").innerHTML = "Kenar Uzunluğu (a)";
+                document.getElementById("kenarb").innerHTML = "Kenar Uzunluğu (b)";
+                document.getElementById("kenarc").innerHTML = "Yükseklik (h)";
+            } else if (kure) {
+                document.getElementById("satir1").style.display = "none";
+                document.getElementById("satir2").style.display = "none";
+                document.getElementById("satir3").style.display = "none";
+                document.getElementById("satir4").style.cssText = "display:list-item;display:flex";
+                document.getElementById("yaricap").innerHTML = "Yarıçap (r)";
+            } else if (silindir || koni) {
+                document.getElementById("satir1").style.display = "none";
+                document.getElementById("satir2").style.display = "none";
+                document.getElementById("satir3").style.cssText = "display:list-item;display:flex";
+                document.getElementById("satir4").style.cssText = "display:list-item;display:flex";
+                document.getElementById("yaricap").innerHTML = "Yarıçap (r)";
+                document.getElementById("kenarc").innerHTML = "Yükseklik (h)";
+            } else if (piramit) {
+                document.getElementById("satir1").style.cssText = "display:list-item;display:flex;";
+                document.getElementById("satir2").style.display = "none";
+                document.getElementById("satir3").style.cssText = "display:list-item;display:flex;";
+                document.getElementById("satir4").style.display = "none";
+                document.getElementById("kenara").innerHTML = "Kenar Uzunluğu (a)";
+                document.getElementById("kenarc").innerHTML = "Yükseklik (h)";
+            }
+        } sekilsec()
+
         function birimsec() {
             var uzunluk = document.getElementById("birim").value;
-            var olcubirim = "cm";
+            var birim = "cm";
             if (uzunluk == mm)
-                olcubirim = "mm";
+                birim = "mm";
             else if (uzunluk == m)
-                olcubirim = "m";
+                birim = "m";
             else if (uzunluk == km)
-                olcubirim = "km";
-            document.getElementById("en_hac").innerHTML = uzunluk;
-            document.getElementById("boy_hac").innerHTML = uzunluk;
-            document.getElementById("yukseklik_hac").innerHTML = uzunluk;
+                birim = "km";
+            document.getElementById("en_birim").innerHTML = uzunluk;
+            document.getElementById("boy_birim").innerHTML = uzunluk;
+            document.getElementById("yukseklik_birim").innerHTML = uzunluk;
+            document.getElementById("yaricap_birim").innerHTML = uzunluk;
         }
-        birimsec();
 
 
-        var en = 0
-        var boy = 0
-        var yukseklik = 0
-        var sonuc = 0
-        function hacim() {
-            en = Number(document.getElementById("kenara").value)
-            boy = Number(document.getElementById("kenarb").value)
-            yukseklik = Number(document.getElementById("kenarc").value)
-            sonuc = (en * boy * yukseklik)
-            document.getElementById("son_hac").innerHTML = en + "cm x " + boy + "cm x " + yukseklik + "cm ölçülerindeki kolinizin desi ölçüsü " + '<span id="result">' + sonuc + '</span>' + " desidir"
 
+        // var kup = document.getElementById("kup").checked;
+        // var dprizma = document.getElementById("dprizma").checked;
+        // var kure = document.getElementById("kure").checked;
+        // var silindir = document.getElementById("silindir").checked;
+        // var koni = document.getElementById("koni").checked;
+        // var piramit = document.getElementById("piramit").checked;
+        var en = 0;
+        var boy = 0;
+        var yukseklik = 0;
+        var yaricap = 0;
+        var hacim = 0;
+        function hesapla() {
+            en = Number(document.getElementById("kenara").value);
+            boy = Number(document.getElementById("kenarb").value);
+            yukseklik = Number(document.getElementById("kenarc").value);
+            yaricap = Number(document.getElementById("yaricap").value);
+
+            if (kup) {
+                hacim = (boy ** 3);
+                document.getElementById("sonuc").innerHTML = hacim;
+            } else if (dprizma) {
+                hacim = (en * boy * yukseklik);
+                document.getElementById("sonuc").innerHTML = hacim;
+            } else if (kure) {
+                hacim = (4 * (3.14 * (yaricap ** 3)) / 3);
+                document.getElementById("sonuc").innerHTML = hacim;
+            } else if (silindir) {
+                hacim = (3.14 * (yaricap ** 2) * yukseklik);
+                document.getElementById("sonuc").innerHTML = hacim;
+            } else if (koni) {
+                hacim = ((3.14 * (yaricap ** 2) * yukseklik) / 3);
+                document.getElementById("sonuc").innerHTML = hacim;
+            } else if (piramit) {
+                hacim = (((en ** 2) * yukseklik) / 3);
+                document.getElementById("sonuc").innerHTML = hacim;
+            }
         }
+
+        // function hacim() {
+        //     en = Number(document.getElementById("kenara").value);
+        //     boy = Number(document.getElementById("kenarb").value);
+        //     yukseklik = Number(document.getElementById("kenarc").value);
+        //     sonuc = (en * boy * yukseklik);
+        //     document.getElementById("son_hac").innerHTML = en + "cm x " + boy + "cm x " + yukseklik + "cm ölçülerindeki kolinizin desi ölçüsü " + '<span id="result">' + sonuc + '</span>' + " desidir";
+        // }
+
     </script>
 
 
 
 
 
-    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="../js/bootstrap.bundle.min.js"></script>
 </body>
 
 </html>

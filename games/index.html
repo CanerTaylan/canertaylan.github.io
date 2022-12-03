@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Taş Kağıt Makas oyunu</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/css.css">
+</head>
+
+<body>
+    <div class="m-4 p-2 border border-4 border-dark shadow-lg" style="width: 600px ;">
+
+        <h3 style="text-align: center ;">Taş Kağıt Makas Oyunu</h3>
+
+        <div class="row text-center mt-5">
+            <div class="col-4 text-c"> <img src="pic/tas.png" class="img-fluid" id="tas" onclick="secim('TAŞ')"><span
+                    style="color: #fbd166 ;font-weight: 700">Taş</span></img></div>
+            <div class=" col-4"><img src="pic/kagit.png" class="img-fluid" id="kagit" onclick="secim('KAĞIT')"><span
+                    style="color: #f3b0be ;font-weight: 700">Kağıt</span> </img></div>
+            <div class="col-4"><img src="pic/makas.png" class="img-fluid" id="makas" onclick="secim('MAKAS')"><span
+                    style="color: #a7cd88 ;font-weight: 700">Makas</span> </img></div>
+            <div class="col">
+
+
+
+                <p><b>Oyun sonucu :</b> <span id="oyunSonuc"></span></p>
+                <p><b>Bilgisayar seçimi : </b><span id="cpuSecim"></span> </p>
+                <p><b style="color: blue ;">Kullanıcı : <span id="userSkor"></span> </b></p>
+                <p><b style="color: red ;">Bilgisayar : <span id="cpuSkor"></span> </b></p>
+                <p><b style="color: green;">Berabere : <span id="berabere"></span> </b></p>
+            </div>
+        </div>
+
+
+    </div>
+
+
+
+
+    <!-- <b>ALGORİTMA</b>
+    <ol>
+        <li>Kullanıcı seçimi diye değişken oluştur.</li>
+        <li>Bilgisayar seçimi dite değişken oluştur.</li>
+        <li>Kullanıcı skou diye değişken oluştur.</li>
+        <li>cpu skoru diye değişken oluştur</li>
+        <li>if/else yapısını fonksiyon içinde yap</li>
+
+    </ol> -->
+
+    <script>
+        let cpu = ["TAŞ", "KAĞIT", "MAKAS"]
+        let userSkor = 0
+        let cpuSkor = 0
+        let berabere = 0
+
+        function secim(x) {     // x i onclick teki parametreye eşitleyecek
+            cpuSecim = cpu[Math.floor(Math.random() * 3)]  // her çalıştırdığında rasgele sayı verecek
+            document.getElementById("cpuSecim").innerHTML = cpuSecim
+            console.log(`cpusecim : ${cpuSecim}`)
+            console.log(`usersecim : ${x}`)
+
+            if (cpuSecim == x) {
+                berabere++
+                document.getElementById("oyunSonuc").innerHTML = ("Berabere Kaldınız");
+                document.getElementById("berabere").innerHTML = berabere;
+                document.getElementById("cpuSkor").innerHTML = cpuSkor;
+                document.getElementById("userSkor").innerHTML = userSkor;
+            } else if (x == "TAŞ" && cpuSecim == "KAĞIT") {
+                cpuSkor++
+                document.getElementById("oyunSonuc").innerHTML = ("Bilgisayar kazandı. :( ");
+                document.getElementById("cpuSkor").innerHTML = cpuSkor;
+                document.getElementById("berabere").innerHTML = berabere;
+                document.getElementById("userSkor").innerHTML = userSkor;
+            }
+            else if (x == "TAŞ" && cpuSecim == "MAKAS") {
+                userSkor++
+                document.getElementById("oyunSonuc").innerHTML = ("Kazandın :)");
+                document.getElementById("userSkor").innerHTML = userSkor;
+                document.getElementById("cpuSkor").innerHTML = cpuSkor;
+                document.getElementById("berabere").innerHTML = berabere;
+            }
+            else if (x == "KAĞIT" && cpuSecim == "MAKAS") {
+                cpuSkor++
+                document.getElementById("oyunSonuc").innerHTML = ("Bilgisayar kazandı. :( ");
+                document.getElementById("cpuSkor").innerHTML = cpuSkor;
+                document.getElementById("berabere").innerHTML = berabere;
+                document.getElementById("userSkor").innerHTML = userSkor;
+            }
+            else if (x == "KAĞIT" && cpuSecim == "TAŞ") {
+                userSkor++
+                document.getElementById("oyunSonuc").innerHTML = ("Kazandın :)");
+                document.getElementById("userSkor").innerHTML = userSkor;
+                document.getElementById("cpuSkor").innerHTML = cpuSkor;
+                document.getElementById("berabere").innerHTML = berabere;
+            }
+            else if (x == "MAKAS" && cpuSecim == "TAŞ") {
+                cpuSkor++
+                document.getElementById("oyunSonuc").innerHTML = ("Bilgisayar kazandı. :( ");
+                document.getElementById("cpuSkor").innerHTML = cpuSkor;
+                document.getElementById("berabere").innerHTML = berabere;
+                document.getElementById("userSkor").innerHTML = userSkor;
+            }
+            else if (x == "MAKAS" && cpuSecim == "KAĞIT") {
+                userSkor++
+                document.getElementById("oyunSonuc").innerHTML = ("Kazandın :)");
+                document.getElementById("userSkor").innerHTML = userSkor;
+                document.getElementById("cpuSkor").innerHTML = cpuSkor;
+                document.getElementById("berabere").innerHTML = berabere;
+            }
+            else {
+                document.getElementById("oyunSonuc").innerHTML = "kazandın"
+            }
+
+
+        }
+
+
+
+
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>

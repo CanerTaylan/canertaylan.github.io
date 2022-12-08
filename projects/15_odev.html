@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ödev</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+    <!-- <link rel="stylesheet" href="css/css.css"> -->
+</head>
+<style>
+    #not {
+        border: 3px solid darkorchid;
+        box-shadow: 1px;
+    }
+
+    table td {
+        padding: 3px 5px;
+    }
+
+    fieldset,
+    legend {
+        all: revert;
+    }
+</style>
+
+<body>
+    <div class="container my-4 py-3 border border-3 border-primary">
+        <ul>
+            <li>
+                <h5 class="text-danger">Girilen iki sayının ortalamasını bul</h5>
+                <h6 class="text-decoration-underline">Algoritma :</h6>
+                <ol>
+                    <li>Başla</li>
+                    <li>Birinci sayıyı gir , (x)</li>
+                    <li>İkinci sayıyı gir , (y)</li>
+                    <li>İki sayıyı topla sonucu toplam değişkenine at , (toplam = x+y)</li>
+                    <li>Toplam değişkenini 2’ye böl ortlama değişkenine at, (ortalama = toplam /2)</li>
+                    <li>Ortalamayı ekrana yaz</li>
+                    <li>Bitir</li>
+                </ol>
+                <fieldset style="background-color: #eeeeee; width: max-content;">
+                    <legend
+                        style="background-color: darkorchid; padding: 5px 10px;color: whitesmoke ; font-weight: 700; border-radius: 10px;">
+                        Geçme Notunu Hesapla </legend>
+
+                    <table>
+                        <tr>
+                            <td>1. Vize Notu :</td>
+                            <td><input type="number" id="vize1"></td>
+                            <td rowspan="3"><button class="btn btn-warning ms-3"
+                                    onclick="sonuc()">Geçme<br>Notunu<br>Hesapla</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>2. Vize Notu :</td>
+                            <td><input type="number" id="vize2"></td>
+                        </tr>
+                        <tr>
+                            <td style="text-align: right ;">Final Notu :</td>
+                            <td><input type="number" id="final"></td>
+                        </tr>
+                        <tr>
+                            <td colspan="3" style="text-align: center ;">
+                                <p id="sonuc"></p>
+                            </td>
+                        </tr>
+                    </table>
+
+                </fieldset>
+
+
+            </li>
+            <hr>
+            <li>
+                <h5 class="text-danger">Girilen bir sayının pozitifmi negatif mi olduğunu bulunuz.</h5>
+                <h6 class="text-decoration-underline">Algoritma : </h6>
+                <ol>
+                    <li>Başla</li>
+                    <li>Bir sayıyı giriniz , (x)</li>
+                    <li>Eğer x < 0, “sayı negatiftir"</li>
+                    <li>Eğer x > 0 “Sayı Pozitifdir”</li>
+                    <li>Eğer x = 0 “Sayı Nötrdür”</li>
+                    <li>Bitir</li>
+                </ol>
+                <input type="number" placeholder="Bir sayı giriniz" oninput="pozitifNegatif()" id="sayi"> <span
+                    style="font-weight:bold ;" id="pn"></span>
+            </li>
+            <hr>
+            <li>
+                <h5 class="text-danger">Bir kenar uzunluğu ve o kenara ait yüksekliği girilen üçgenin alanını hesapla
+                </h5>
+                <h6 class="text-decoration-underline">Algoritma :</h6>
+                <ol>
+                    <li>Başla</li>
+                    <li>Kenar Uzunluğu gir , (k)</li>
+                    <li>Yüksekliği gir , (h)</li>
+                    <li>Girilen kenar uzunuğuyla yüksekliği çarp. Sonucu 2’ye böl. Sonucu alan değişkenine ata
+                        Alan = (k*h)/2</li>
+                    <li>Alanı ekrana yazdır, (alan)</li>
+                    <li>Bitir</li>
+                </ol>
+                <table>
+                    <tr>
+                        <td> <img class="img-fluid" src="pic/ucgen.svg" alt="üçgen" style="height: 200px;
+            width: 200px;"> </td>
+                        <td style="text-align: right ;">Kenar uzunluğu giriniz : <input class="mb-2" type="number"
+                                id="kenar" style="width: 75px ;" placeholder="cm"> <br>
+                            Yükseklik uzunluğu giriniz : <input class="mb-2" type="number" id="yukseklik"
+                                style="width: 75px ;" placeholder="cm"><br>
+                            <button class="btn btn-sm btn-success mb-1" onclick="ucgenAlan()">Alan Hesapla</button> <br>
+                            <p id="alanUcgen"></p>
+                        </td>
+                    </tr>
+                </table>
+
+
+
+            </li>
+            <hr>
+            <li>
+                <h5 class="text-danger">Girilen iki sayının hangisi daha küçük ?</h5>
+                <h6 class="text-decoration-underline">Algoritma :</h6>
+                <ol>
+                    <li>Başla</li>
+                    <li>1. sayıyı Giriniz (a)</li>
+                    <li>2. sayıyı giriniz (b)</li>
+                    <li>Eğer a < b “Sayı 1 daha küçüktür” değilse “Sayı2 daha küçüktür”</li>
+                    <li>Bitir</li>
+                </ol>
+                <b class="text-primary">Hangisi daha küçük </b> <br>
+                <input type="number" name="" id="sayi1" placeholder="1. sayıyı giriniz">
+                <---> <input type="number" id="sayi2" placeholder="2. sayıyı giriniz"> <button
+                        class="btn btn-sm btn-primary" onclick="kucukSayi()">Hangisi küçük ?</button>
+                    <p id="kucukSayi"></p>
+            </li>
+            <hr>
+            <li>
+                <h5 class="text-danger">Girilen sayı tekmi çiftmi ?</h5>
+                <h6 class="text-decoration-underline">Algoritma : </h6>
+                <ol>
+                    <li>Başla</li>
+                    <li>Kullanıcıdan bir sayı iste (x)</li>
+                    <li>Girilen sayıyı 2’ye modunu al. Sonuç değişklenine ata (sonuç = x %2)</li>
+                    <li>Eğer sonuç değişkeni sıfıra eşitse “SAYI ÇİFTTİR” </li>
+                    <li>Eğer sonuç değişkeni sıfıra Eşit Değilse “SAYI TEKTİR”</li>
+                    <li>Bitir</li>
+                </ol>
+                <input type="number" name="" id="tekCiftSayi" oninput="tekCift()" placeholder="Bir sayı giriniz">
+                <span class="ms-2" id="tekCift"></span>
+            </li>
+            <hr>
+            <li>
+                <h5 class="text-danger">Dikdörtgenin çevresini hesapla</h5>
+                <h6 class="text-decoration-underline">Algoritma :</h6>
+                <ol>
+                    <li>Başla</li>
+                    <li>Kısa kenarı gir, (kk)</li>
+                    <li>Uzun kenarı gir, (uk)</li>
+                    <li>Kısa kenarla uzun kenarı topla. Toplamı 2 ile çarp sonuç değişkenine at
+                        Sonuç = (kk + uk) * 2</li>
+                    <li>Sonucu ekrana yazdır</li>
+                    <li>Bitir</li>
+                </ol>
+                <table>
+                    <tr>
+                        <td style="text-align: center ;"> <img class="img-fluid" src="pic/dikdortgen.png"
+                                alt="dikdörtgen" style="height: 125px;
+            width: 250px; "> </td>
+                        <td style="text-align: right ;">Uzun kenar uzunluğu giriniz : <input class="mb-1" type="number"
+                                id="kısaKenar" style="width: 75px ;" placeholder="cm"> <br>
+                            Kısa kenar uzunluğu giriniz : <input class="mb-1" type="number" id="uzunKenar"
+                                style="width: 75px ;" placeholder="cm"><br>
+                            <button class="btn btn-sm btn-success bg-gradient mb-1" onclick="dikdortgenCevre()">Çevre
+                                Hesapla</button> <br>
+                            <p id="cevre"></p>
+                        </td>
+                    </tr>
+                </table>
+            </li>
+            <hr>
+            <li>
+                <h5 class="text-danger">Girilen fiyatın 18% kdvsini hesapla</h5>
+                <h6 class="text-decoration-underline">Algoritma</h6>
+                <ol>
+                    <li>Başla</li>
+                    <li>Fiyatı Girin, (fiyat)</li>
+                    <li>Fiyatı 1.18 ile çarp kdvliFiyat değişkenine at
+                        kdvliFiyat = fiyat * 1.18</li>
+                    <li>krana Yazdır, kdvliFiyat</li>
+                    <li>Bitir</li>
+                </ol>
+            </li>
+        </ul>
+        <div class="row justify-content-center border border-3 border-primary m-4 rounded-4"
+            style="width: 35%; background-color: rgb(202 226 237);">
+            <h4 class="text-center mt-2">KDV<br>Dahil ve Hariç Hesaplama</h4>
+            <div class="col-lg-2 m-auto align-content-center">
+                <select class="form-select my-2 " aria-label="Default select" id="kdvOran" style="width:fit-content;">
+                    <option selected disabled>KDV Oranı</option>
+                    <option value="18">%18 KDV</option>
+                    <option value="8">%8 KDV</option>
+                    <option value="1">%1 KDV</option>
+                </select>
+            </div>
+            <div class="col-lg-2 align-content-center" style="margin-right: 168px;">
+                <select class="form-select my-2" aria-label="Default select" id="kdvDurum" style="width:fit-content;">
+                    <option selected disabled>KDV durumu</option>
+                    <option value="1">KDV Dahil</option>
+                    <option value="2">KDV Hariç</option>
+                </select>
+            </div>
+            <div class="row justify-content-center"></div>
+            <div class="col-lg-8 py-3 my-2 text-center">
+                <p class="text-center">
+                    <b>Tutar Girin : </b> <input type="number" id="fiyat" style="width:100px" placeholder="0,00 tl">
+                    <button class="btn btn-danger bg-gradient mt-1" style="width: 200px;" onclick="kdvHesaplama()">KDV
+                        Hesapla</button>
+                </p>
+                <span id="kdv"></span><br>
+                <span id="tutar" style="border-top: 1px solid gray;"></span>
+            </div>
+        </div>
+
+
+
+
+        <!-- <input type="radio" name="kdvOran" id="kdvOran" style="margin-right:3px ;" value="18"> <label for="18">%18
+            KDV</label>
+        <input type="radio" name="kdvOran" id="kdvOran" style="margin-left: 8px; margin-right:3px" value="8"><label
+            for="8">%8 KDV</label>
+        <input type="radio" name="kdvOran" id="kdvOran" style="margin-left: 8px; margin-right:3px" value="1"><label
+            for="1">%1 KDV</label> -->
+
+
+
+    </div>
+    <script>
+
+
+        function kdvHesaplama() {
+            let kdvDurum = document.getElementById("kdvDurum").value;
+            let fiyat = Number(document.querySelector("#fiyat").value);
+            let kdvOran = Number(document.querySelector("#kdvOran").value);
+            if (kdvDurum == 1) {
+                document.querySelector("#kdv").innerHTML = `%${kdvOran} KDV Tutarı : <b>${(fiyat - (fiyat / (1 + kdvOran / 100))).toFixed(2)} tl</b>`;
+                document.querySelector("#tutar").innerHTML = `KDV Hariç Net Tutar: <b>${(fiyat / (kdvOran + 100) * 100).toFixed(2)} tl</b>`;
+
+            } else if (kdvDurum == 2) {
+                document.querySelector("#kdv").innerHTML = `%${kdvOran} KDV Tutarı : <b>${(fiyat * kdvOran / 100).toFixed(2)} tl</b>`;
+                document.querySelector("#tutar").innerHTML = `KDV Dahil Toplam Tutar: <b>${fiyat * (1 + (kdvOran / 100)).toFixed(2)} tl</b>`;
+            } else if (kdvDurum != 1 & kdvDurum != 2) {
+                document.querySelector("#tutar").innerHTML = "KDV durumunu belirtiniz.";
+            } if (isNaN(kdvOran)) {
+                document.querySelector("#kdv").innerHTML = "KDV oranını belirtiniz.";
+                document.querySelector("#tutar").innerHTML = "";
+            }
+        }
+
+
+        function dikdortgenCevre() {
+            let kk = Number(document.querySelector("#kısaKenar").value);
+            let uk = Number(document.querySelector("#uzunKenar").value);
+            let cevre = ((kk + uk) * 2);
+            document.querySelector("#cevre").innerHTML = `Dikdörtgenin çevresi <b>${cevre} cm</b>'dir.`
+        }
+
+        function tekCift() {
+            let x = Number(document.querySelector("#tekCiftSayi").value);
+            if (x % 2 == 0) {
+                document.querySelector("#tekCift").innerHTML = `${x} çift sayıdır.`;
+            } else {
+                document.querySelector("#tekCift").innerHTML = `${x} tek sayıdır.`
+            }
+        }
+
+        function kucukSayi() {
+            let a = Number(document.querySelector("#sayi1").value);
+            let b = Number(document.querySelector("#sayi2").value);
+            if (a < b) {
+                document.querySelector("#kucukSayi").innerHTML = `Girdiğiniz 1. sayı <b>${a}</b> daha küçüktür.`;
+            }
+            if (a == 0 || b == 0) {
+                document.querySelector("#kucukSayi").innerHTML = "Lütfen bir sayı giriniz";
+            }
+            else {
+                document.querySelector("#kucukSayi").innerHTML = `Girdiğiniz 2. sayı <b>${b}</b> daha küçüktür.`;
+            }
+        }
+
+
+        function ucgenAlan() {
+            let k = Number(document.querySelector("#kenar").value);
+            let h = Number(document.querySelector("#yukseklik").value);
+            let alan = (k * h / 2);
+            document.querySelector("#alanUcgen").innerHTML = `Üçgenin alanı <b>${alan} cm²</b>'dir.`;
+        }
+
+        function pozitifNegatif() {
+            let sayi = Number(document.querySelector("#sayi").value);
+            console.log(sayi);
+            if (sayi < 0) {
+                document.querySelector("#pn").innerHTML = "Girdiniz sayı Negatiftir";
+            } else if (sayi > 0) {
+                document.querySelector("#pn").innerHTML = "Girdiniz sayı Pozitiftir";
+            } else if (sayi == 0) {
+                document.querySelector("#pn").innerHTML = "Girdiniz sayı Nötrdür";
+            } else {
+                document.querySelector("#pn").innerHTML = "Negatif yada pozitif bir sayı giriniz."
+            }
+            document.querySelector(".sonuc").innerHTML = sayi;
+        }
+
+        function sonuc() {
+            var vize1 = Number(document.getElementById("vize1").value);
+            var vize2 = Number(document.getElementById("vize2").value);
+            var final = Number(document.getElementById("final").value);
+            var sonuc = ((vize1 + vize2 + final) / 3).toFixed(2);   // .tofixed(2) çıkan sonucun ondalık hanesini 2 hane olarak gösterir.
+            if (sonuc <= 50) {
+                document.getElementById("sonuc").innerHTML = `Geçme notun : <b>${sonuc}</b> sınıfta kaldın `
+                document.getElementById("sonuc").style.color = "red";
+            }
+            else {
+                document.getElementById("sonuc").innerHTML = `Geçme notun : <b>${sonuc}</b> sınıfı geçtin `
+                document.getElementById("sonuc").style.color = "green";
+
+            }
+        }
+
+
+
+
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>

@@ -1,40 +1,50 @@
-body{
-background-color: #e0f4f5;
+body {
+    background-color: #e0f4f5;
 }
 
-hr{
-    border-style: dotted; 
-    border-width: 3px; 
-    width: 50%; 
+hr {
+    border-style: dotted;
+    border-width: 3px;
+    width: 50%;
     text-align: center;
 }
 
-h2, h4, h5 {
-    color: #033540 ;
+h2,
+h4,
+h5 {
+    color: #033540;
 }
-.navbar{
-    background-color: #033540; 
+
+.navbar {
+    background-color: #033540;
     color: #fff;
 }
-.navbar li a{
-color: #fff;
-text-decoration: none;   
+
+.navbar li a {
+    color: #fff;
+    text-decoration: none;
 }
 
+.navbar-toggler {
+    margin-right: 45px;
+    color: #0dcaf0;
+    border-color: #0dcaf0;
+}
 
-
-.carousel-inner > .item > img {
+.carousel-inner>.item>img {
     margin: 0 auto;
 }
 
-.my-slide{
+.my-slide {
     z-index: 1;
 }
-#order{
+
+#order {
     background-color: #fff;
 }
 
-.carousel-control-prev-icon, .carousel-control-next-icon  {
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
     background-color: #033540;
     border-radius: 10px;
     -webkit-border-radius: 10px;
@@ -43,20 +53,23 @@ text-decoration: none;
     -o-border-radius: 10px;
     height: 3rem;
 }
-.carousel-control-prev-icon:hover, .carousel-control-next-icon:hover {
-        color: #fff;
+
+.carousel-control-prev-icon:hover,
+.carousel-control-next-icon:hover {
+    color: #fff;
 }
-#main{
+
+#main {
     background-color: #a7d1d2;
-margin: auto;   
+    margin: auto;
 }
 
 
 #main ul {
     list-style: none;
-    line-height:120%;
+    line-height: 120%;
 }
-  
+
 #main ul li::before {
     content: "\2023";
     color: #033540;
@@ -66,34 +79,48 @@ margin: auto;
     width: 1em;
     margin-left: -1em;
 }
-#footer-card {
+
+.footer-card {
     background-color: #a7d1d2;
 }
-#footer-card .btn{
+
+.footer-card .btn {
     background-color: #033540;
     border-color: #0dcaf0;
 }
-#footer-card .btn:hover{
+
+.footer-card .btn:hover {
     background-color: #0dcaf0;
     border-color: #033540;
     color: #033540;
 }
-#footer-card a{
+
+.footer-card a {
     text-decoration: none;
     color: #033540;
     font-size: large;
     font-weight: bold;
 }
-#footer-card a:hover, i:hover{
-     color: rgba(255, 255, 255, 0.449);
+
+.footer-card a:hover,
+i:hover {
+    color: rgba(255, 255, 255, 0.449);
 }
+
 .sign {
     font-family: 'Inspiration', cursive;
     font-size: medium;
-  }
+}
 
-#contact i{
-color: #033540;
-font-size: 20px;
+#contact i {
+    color: #033540;
+    font-size: 20px;
 
+}
+
+#contactform {
+    background-color: #03354045;
+    border-color: blueviolet;
+    padding: 5px;
+    padding-left: 10px;
 }
